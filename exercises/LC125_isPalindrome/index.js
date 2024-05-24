@@ -26,25 +26,33 @@ s consists only of printable ASCII characters.
 
 
 function isPalindrome(s) {
-    // Sanitize the input string (s)
-    // \W - grab all NON-Alphanumeric characters such as SPACES, EXCLAMATION MARKS, etc..
+    // Sanitize the input string(s) by removing all alphanumeric characters and lowercasing it.
+    // \W - grab all NON-Alphanumeric characters such as SPACES, COLONS, COMMAS, etc..
     // '_' - Include underscores(_) as well.
     // "" - means that we want to replace all NON-Alphanumeric characters with an empty string
     s = s.toLowerCase().replace(/[\W_]/g, "")
+    // .replace() takes in 2 arguements
+    // 1. what we want to replace (the regular expression: /[\W_]/g)
+    // the square brackets [] in the regular expression indicates a capture group
+    // 2. what we want to replace it with (an empty string: "")
 
 
     // Create 2 pointers, left and right
-    let left = 0;
-    let right = s.length - 1;
+    let left = 0;   // left pointer at the start of our input string
+    let right = s.length - 1;   // right pointer at the end of our input string
 
+    // While left < right
     while (left < right) {
         if (s[left] !== s[right]) {
+            // If the charaster at left is !== to the character at right, return false
             return false;
         }
-        // Move Left pointer UP and Right pointer DOWN.
+        // If it is equal, move Left pointer UP and Right pointer DOWN.
         left++;
         right--;
     }
+
+    // If we did not return FALSE in the WHILE LOOP, then it is a valid palindrome.
     return true;
 }
 
