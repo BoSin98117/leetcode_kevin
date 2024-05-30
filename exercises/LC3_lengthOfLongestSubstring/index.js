@@ -3,7 +3,7 @@
 // --- Example
 // lengthOfLongestSubstring("abcabcbb") --> 3 since length of "abc"
 // lengthOfLongestSubstring("bbbbb") --> 1 since length of "b"
-
+//
 function lengthOfLongestSubstring(s) {
     // Create Object that contains all characters of string at the index they are located
     let windowCharsMap = {};
