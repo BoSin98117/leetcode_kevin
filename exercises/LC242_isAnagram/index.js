@@ -18,6 +18,7 @@ s and t consist of lowercase English letters.
 
 
 function isAnagram(s, t) {
+    // If the length of the strings are not equal, then it's not an anagram.
     if (s.length !== t.length) {
         return false;
     }
@@ -29,20 +30,23 @@ function isAnagram(s, t) {
     // Fill up sCharCounts Hash Map
     for (let i = 0; i < s.length; i++) {
         const sChar = s[i];
+        // The character at sCharCounts[sChar] is equal to itself + 1 (sCharCounts[sChar] + 1) or 1 (meaning it was the first time the character is put into our sCharCounts Hash Map).
         sCharCounts[sChar] = sCharCounts[sChar] + 1 || 1;
     }
 
+    // Now loop through t
     for (let i = 0; i < t.length; i++) {
         const tChar = t[i];
-        // If there are no tChar in sCharCounts, then return false
+        // If the character at t[i] (tChar) is not in our sCharCounts{} Hash Map (!sCharCounts[]) or the character is in our sCharCounts{} Hash Map but it's value is '0' (!sCharCounts[]), then return false.
         if (!sCharCounts[tChar]) {
             return false;
-            // If there is a tChar in sCharCounts then decrement it by 1.  We do this because sometimes there are duplicate characters in a string.  
+            // If there is a tChar in sCharCounts then decrement it by 1.  We do this because sometimes there are duplicate characters in a string which means the value for that character is equal to the number of times it appears in our sCharCounts{} Hash Map.
         } else {
-            // 
             sCharCounts[tChar]--
         }
     }
+
+    // If we run through the loop for t and never return false, then we have a valid Anagram.
     return true;
 }
 
