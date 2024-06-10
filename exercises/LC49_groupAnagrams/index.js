@@ -26,21 +26,27 @@ function groupAnagrams(strs) {
     let grouped = {};
     for (let i = 0; i < strs.length; i++) {
         const word = strs[i];
+        console.log("word is: " + word);
         const key = word.split('').sort().join('');
+        console.log("key is: " + key);
 
         if (!grouped[key]) {
             grouped[key] = [];
         };
 
         grouped[key].push(word);
-    }
+        console.log(grouped);
 
+        console.log("\n");
+    }
 
     // OBJECT.VALUES(GROUPED) - If we pass in an OBJECT(GROUP), OBJECT.VALUES will return an ARRAY of the values in that object.  In this case, it will return an array of arrays.
     return Object.values(grouped);
 }
 
-module.exports = groupAnagrams;
+groupAnagrams(strs = ["eat", "tea", "tan", "ate", "nat", "bat"]);
+
+// module.exports = groupAnagrams;
 
 
 /*
