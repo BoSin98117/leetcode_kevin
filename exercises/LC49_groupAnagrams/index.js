@@ -27,13 +27,20 @@ function groupAnagrams(strs) {
     for (let i = 0; i < strs.length; i++) {
         const word = strs[i];
         console.log("word is: " + word);
+        // This will split the word into an array of characters,
+        // sort the word alphabetically
+        // then joins them back into a word that is alphabetically sorted.
+        // time = t, i, m, e | e, i, m, t | eimt
         const key = word.split('').sort().join('');
         console.log("key is: " + key);
 
+        // If that key DOES NOT exist in our object...
         if (!grouped[key]) {
+            // We will set that KEY to an EMPTY ARRAY
             grouped[key] = [];
         };
 
+        // Push the word into the appropriate key array.
         grouped[key].push(word);
         console.log(grouped);
 
