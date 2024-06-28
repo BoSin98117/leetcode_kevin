@@ -35,12 +35,16 @@ const climbStairs = n => {
     for (let i = 4; i <= n; i++) {
         // Fibonacci Sequence here
         ways.push(ways[i - 1] + ways[i - 2]);
+        // If we input climbStairs(6), ways = [0, 1, 2, 3, 5, 8, 13]
+        console.log("ways: " + ways);
     }
 
     return ways[n]; // Can also write - return ways.pop()
 };
 
-module.exports = climbStairs;
+// module.exports = climbStairs;
+
+console.log(climbStairs(6));
 
 /*
 Time Complexity: O(n) - our code loops n times (for loop)

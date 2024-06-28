@@ -33,15 +33,18 @@ const isValid = s => {
         let char = s[i];
 
         // If pairsHashMap[char] is a key, then we push it into our stack[].
-        // stack.push(char) = key
+        // CHAR = KEY
         if (pairsHashMap[char]) {
+            console.log("char/key = " + char);
             stack.push(char);
             // Now we have pushed the keys: (, {, and [ into our stack[].
             // So now if we pop the values out of our stack[] and it's not equal to the char, then we would return false.
-            // stack.pop() = value
+            // CHAR = VALUE
         } else if (pairsHashMap[stack.pop()] !== char) {
             return false;
         }
+        console.log("stack: " + stack);
+        console.log("\n")
     }
 
     // We do not return true; because the stack may contain keys that were not popped off.
@@ -49,7 +52,9 @@ const isValid = s => {
     return stack.length === 0;
 };
 
-module.exports = isValid;
+// module.exports = isValid;
+
+console.log(isValid("({[]})"))
 
 /*
 Time Complexity: O(n) - We iterate through the input string just once
