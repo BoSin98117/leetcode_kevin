@@ -31,6 +31,7 @@ function rob(nums) {
     let maxLootAtNth = [nums[0], Math.max(nums[0], nums[1])];
 
     for (let i = 2; i < nums.length; i++) {
+        let num = nums[i];
         /*  
             Update maxLootAtNth at each iteration
             Max loot at 3rd house is whichever is larger:
@@ -38,13 +39,20 @@ function rob(nums) {
             OR
             Max Loot from Previous House
         */
+        console.log("i = " + num);
+        console.log("nums = " + nums);
+        console.log("maxLootAtNth before = " + maxLootAtNth);
         maxLootAtNth.push(Math.max(nums[i] + maxLootAtNth[i - 2], maxLootAtNth[i - 1]));
+        console.log("maxLootAtNth = " + maxLootAtNth + "\n");
     }
     // return last item of maxLoot array.
     return maxLootAtNth.pop();
 }
 
-module.exports = rob;
+rob([2, 1, 1, 10, 3, 1, 6, 4, 2]);
+//  2, 2, 3, 4, 6, 6, 12, 14, 16, 16 | return 16
+
+// module.exports = rob;
 
 ////
 
