@@ -38,7 +38,8 @@ const climbStairs = n => {
         // If we input climbStairs(6), ways = [0, 1, 2, 3, 5, 8, 13]
         console.log("ways: " + ways);
     }
-
+    // return ways[n] = if we input climstairs(6), we will return ways[6] which would be 13
+    // ways = [0, 1, 2, 3, 5, 8, 13] | ways[2] = 2, ways[3] = 3, ways[4] = 5, ways[5] = 8
     return ways[n]; // Can also write - return ways.pop()
 };
 
