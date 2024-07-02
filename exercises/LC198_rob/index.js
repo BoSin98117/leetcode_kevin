@@ -27,9 +27,10 @@ function rob(nums) {
     if (nums.length === 2) return Math.max(nums[0], nums[1]);
 
     // Subproblem
-    // Set maxLootAtNth to the MAX between nums[0] and Math.max(nums[0], nums[1]
+    // Set maxLootAtNth array indices 0 and 1
     let maxLootAtNth = [nums[0], Math.max(nums[0], nums[1])];
 
+    // Loop over nums input array and set the values of maxLootAtNth indices from 2 until the end
     for (let i = 2; i < nums.length; i++) {
         let num = nums[i];
         /*  
@@ -42,15 +43,16 @@ function rob(nums) {
         console.log("i = " + num);
         console.log("nums = " + nums);
         console.log("maxLootAtNth before = " + maxLootAtNth);
+
         maxLootAtNth.push(Math.max(nums[i] + maxLootAtNth[i - 2], maxLootAtNth[i - 1]));
+
         console.log("maxLootAtNth = " + maxLootAtNth + "\n");
     }
     // return last item of maxLoot array.
     return maxLootAtNth.pop();
 }
 
-rob([2, 1, 1, 10, 3, 1, 6, 4, 2]);
-//  2, 2, 3, 4, 6, 6, 12, 14, 16, 16 | return 16
+rob([2, 1, 3, 2, 4, 2]);
 
 // module.exports = rob;
 
