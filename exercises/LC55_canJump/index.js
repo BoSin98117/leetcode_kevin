@@ -117,6 +117,11 @@ function canJump(nums) {
 
     for (let j = 1; j < nums.length; j++) {
         for (let i = 0; i < j; i++) {
+            console.log("i = " + i);
+            console.log("j = " + j);
+            console.log("nums[i] = " + nums[i]);
+            console.log("i + nums[i] = " + (i + nums[i]));
+            console.log("dpPositions[] = " + dpPositions + "\n")
             if (dpPositions[i] && i + nums[i] >= j) {
                 dpPositions[j] = true;
                 // Once the i step can reach the j step, we don't need to proceed.  Just break out.  This makes the code more efficient.
@@ -124,7 +129,9 @@ function canJump(nums) {
             }
         }
     }
-    return dpPositions[dpPositions.length - 1];
+    console.log("dpPositions end of code = " + dpPositions);
+    // return dpPositions[dpPositions.length - 1];
 }
 
-// indy
+
+canJump([1, 2, 0, 3]);
