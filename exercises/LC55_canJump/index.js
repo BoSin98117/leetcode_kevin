@@ -134,4 +134,4 @@ function canJump(nums) {
 }
 
 
-canJump([1, 2, 0, 3]);
+canJump([1, 1, 0, 3]);
