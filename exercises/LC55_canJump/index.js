@@ -133,5 +133,9 @@ function canJump(nums) {
     // return dpPositions[dpPositions.length - 1];
 }
 
+/*
+Time Complexity: O(N^2) We have Nested for loops.
+Space Complexity: O(N) We create dpPositions array that is the same size as the input array.
+*/
 
 canJump([1, 1, 0, 3]);
