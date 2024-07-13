@@ -122,6 +122,9 @@ function canJump(nums) {
             console.log("nums[i] = " + nums[i]);
             console.log("i + nums[i] = " + (i + nums[i]));
             console.log("dpPositions[] = " + dpPositions + "\n")
+            // If i is true (dpPositions[i])
+            // && jumps from i can reach j (i + nums[i] >= j)
+            // set the value at dpPositions[j] to true
             if (dpPositions[i] && i + nums[i] >= j) {
                 dpPositions[j] = true;
                 // Once the i step can reach the j step, we don't need to proceed.  Just break out.  This makes the code more efficient.
