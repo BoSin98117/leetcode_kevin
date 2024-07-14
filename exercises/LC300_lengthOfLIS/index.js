@@ -27,12 +27,18 @@ function lengthOfLIS(nums) {
     let dpSubsequence = new Array(nums.length).fill(1);
     let maxSoFar = 1;
 
-    console.log("dpsequence = " + dpSubsequence);
 
     for (let j = 1; j < nums.length; j++) {
         for (let i = 0; i < j; i++) {
             if (nums[j] > nums[i]) {
+                console.log("nums[i] = " + nums[i]);
+                console.log("nums[j] = " + nums[j]);
+                console.log("dpSubsequence[j] = dpSubsequence[i] + 1 OR dqsubsequence[j]");
+                console.log("dpSubsequence[j] = " + dpSubsequence[i] + " + 1" + " OR " + dpSubsequence[j]);
+
                 dpSubsequence[j] = Math.max(dpSubsequence[i] + 1, dpSubsequence[j]);
+                console.log("maxSoFar = " + maxSoFar);
+                console.log("\n");
             }
         }
         maxSoFar = Math.max(maxSoFar, dpSubsequence[j]);
@@ -40,8 +46,9 @@ function lengthOfLIS(nums) {
     return maxSoFar;
 }
 
-module.exports = lengthOfLIS;
+// module.exports = lengthOfLIS;
 
+console.log(lengthOfLIS([1, 4, 0, 7, 5, 6]));
 
 /*
 Time Complexity: O(N^2) - We do up to N work, for all N elements
