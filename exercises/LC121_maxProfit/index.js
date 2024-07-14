@@ -29,15 +29,25 @@ var maxProfit = function (prices) {
     for (let i = 0; i < prices.length; i++) {
         const price = prices[i];
 
+        console.log("price = " + prices[i]);
+        console.log("cheapestPrice before = " + cheapestPrice);
+
         if (price < cheapestPrice) { cheapestPrice = price; }
 
+        console.log("cheapestprice after = " + cheapestPrice);
+
         const currentProfit = price - cheapestPrice;
+        console.log("currentProfit = " + currentProfit);
+
         maxProfit = Math.max(currentProfit, maxProfit);
+        console.log("maxProfit = " + maxProfit);
+        console.log("\n");
     }
     return maxProfit;
 };
 
-module.exports = maxProfit;
+// module.exports = maxProfit;
+console.log(maxProfit([7, 1, 5, 3, 6, 4]));
 
 
 /*

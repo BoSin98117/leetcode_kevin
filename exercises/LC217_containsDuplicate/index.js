@@ -20,7 +20,8 @@ Constraints:
 
 
 const containsDuplicate = nums => {
-    // Use a  HashMap for O(1) lookup time.
+    // Use a  HashMap{} for O(1) lookup time.
+    // We could use an array[], but that would be O(n) lookup time.
     const visitedNums = {};
 
     for (let i = 0; i < nums.length; i++) {
@@ -33,7 +34,7 @@ const containsDuplicate = nums => {
             visitedNums[num] = true;
         }
     }
-    // If We did find any duplicates, return false
+    // If we DID NOT find any duplicates, return FALSE
     return false;
 };
 
