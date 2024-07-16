@@ -27,6 +27,8 @@ Only one valid answer exists.
 
 function twoSum(arr, target) {
     // Create Hash Table Object to store each element that is visited from Input Array
+    // Input array: [2, 4, 1, 6]
+    // numsVisited{2: 0, 4: 1, 1: 2, 6: 3} | 2:index[0], 4:index[1], 1:index[2], 6:index[3]
     const numsVisited = {};
     // Create an array to return the indices of the values that add up to Target
     const res = [];
@@ -34,17 +36,25 @@ function twoSum(arr, target) {
     for (let i = 0; i < arr.length; i++) {
         const num = arr[i];
         const complement = target - num;
-        // UNDEFINED - we make it undefined bc Javascript see's 0 as a falsy value.  So it we push to res[], the first index is 0, and Javascript will consider it falsy.  Making it undefined will resolve this.
+        // UNDEFINED - we make it undefined bc Javascript see's 0 as a falsy value.  So if we push to res[], the first index is 0, and Javascript will consider it falsy.  Making it undefined will resolve this.
+        console.log("\n");
+        console.log("i = " + i);
+        console.log("num[i] = " + num);
+        console.log("complement = " + complement);
         if (numsVisited[complement] !== undefined) {
-            res.push(i);
             res.push(numsVisited[complement]);
+            res.push(i);
+
+            console.log("numsVisited[complement] = " + numsVisited[complement]);
         }
         numsVisited[num] = i;
+        console.log(numsVisited);
     }
+    console.log("res.push 'numsVisited[complement]' and 'i' = " + res);;
     return res;
 }
-
-module.exports = twoSum;
+// module.exports = twoSum;
+twoSum([2, 7, 11, 4, 5, 6], 10);
 
 
 /*
