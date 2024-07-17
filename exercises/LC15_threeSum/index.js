@@ -46,8 +46,6 @@ const threeSum = nums => {
             continue;
         }
 
-        console.log("nums[i] = " + nums[i]);
-
         while (left < right) {
             if (nums[left] + nums[right] === target) {
                 res.push([nums[i], nums[left], nums[right]]);
@@ -68,8 +66,8 @@ const threeSum = nums => {
     return res;
 };
 
-module.exports = threeSum;
-
+// module.exports = threeSum;
+console.log(threeSum([-1, 0, 1, 2, -1, -4]));
 
 /*
 Time Complexity: O(n^2) + O(n log n) | but we get rid of the smaller value so our Big O = O(n^2) - It is this because we start with the first index and iterate through the entire array, then we move to the next index and iterate over the rest of the array and so on...  
