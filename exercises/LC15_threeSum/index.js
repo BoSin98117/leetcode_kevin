@@ -38,27 +38,37 @@ const threeSum = nums => {
 
     for (let i = 0; i < nums.length; i++) {
         const target = 0 - nums[i];
+
+        // Pointer that is next index of i
         let left = i + 1;
+        // Pointer that is the last index in the input array
         let right = nums.length - 1;
 
         // Prevent duplicates
+        // If i is the same value as the previous index (i - 1), then move i up to the next index.
         if (nums[i] === nums[i - 1]) {
             continue;
         }
 
         while (left < right) {
+            // If our LEFT pointer + RIGHT pointer === TARGET, then all three values equals 0 so we push them into an array into our res[].
             if (nums[left] + nums[right] === target) {
                 res.push([nums[i], nums[left], nums[right]]);
                 left++
-                // This will skip the next index if it has the same value as the previous index.  
+                // This will skip the next index if LEFT pointer has the same value as the previous index.  
                 // This will ensure that we do not push the same values into our RES ARRAY more than once.
                 // *This only works if the ARRAY is SORTED
                 while (nums[left] === nums[left - 1]) {
                     left++
                 }
+
+
             } else if (nums[left] + nums[right] < target) {
+                // Else If our LEFT pointer + RIGHT pointer < TARGET, we move the LEFT++ because our array is sorted meaning the numbers in our array are ascending.  Moving LEFT++ will give us a higher number.
                 left++
+
             } else {
+                // Else if our LEFT pointer + RIGHT pointer > TARGET, we move the RIGHT-- because our array is sorted meaning the numbers in our array are ascending.  Moving RIGHT-- will give us a lower number.
                 right--
             }
         }
