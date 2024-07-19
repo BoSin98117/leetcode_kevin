@@ -24,7 +24,7 @@ Constraints:
 
 /*
 Time Complexity: O(n) - 1 for loop
-Space Complexity: O(n) - dp = [nums[0]] - we allocate a dp ARRAY
+Space Complexity: O(1)
 */
 function maxSubArray(nums) {
     let max = nums[0];
