@@ -27,18 +27,28 @@ Time Complexity: O(n) - 1 for loop
 Space Complexity: O(1)
 */
 function maxSubArray(nums) {
+    // Create a MAX variable that will be returned at the end of the code.
     let max = nums[0];
+    let numArray = [nums[0]];
 
+    // Loop over the input array
     for (let i = 1; i < nums.length; i++) {
         const num = nums[i];
+        console.log("num = " + num);
         nums[i] = Math.max(num, num + nums[i - 1]);
+        numArray.push(nums[i]);
+        console.log("nums[i] = Math.max(num, num + nums[i - 1]");
+        console.log("Math.max(" + num + ", " + num + " + " + nums[i - 1] + ")");
         max = Math.max(max, nums[i]);
+        console.log("nums = " + numArray);
+        console.log("\n")
     }
 
     return max;
 }
+console.log(maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]));
 
-module.exports = maxSubArray;
+// module.exports = maxSubArray;
 /*
 [-2,1,-3,4,-1,2,1,,-5,4] - Input Array
 nums[i] -2   1  -3   4  -1   2   1  -5   4
