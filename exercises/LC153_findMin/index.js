@@ -41,7 +41,7 @@ function findMin(nums) {
         return nums[0];
     }
 
-    // If the 1st item is less than the last item, then return the 1st item because the array is sorted.
+    // If the 1st item is less than the last item, then return the 1st item because the array is sorted and the first value is the minimum.
     if (nums[left] < nums[right]) {
         return nums[left];
     }
