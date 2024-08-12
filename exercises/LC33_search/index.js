@@ -58,6 +58,7 @@ function findMinIdx(rotatedSortedArr) {
 
 
 // Helper function for Binary Search
+// This helper function only takes in a SORTED ARRAY
 function binarySearch(nums, target, left, right) {
     while (left <= right) {
         const mid = Math.floor((left + right) / 2);
