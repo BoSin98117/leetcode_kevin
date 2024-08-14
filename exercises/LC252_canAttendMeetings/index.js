@@ -23,6 +23,7 @@ const canAttendMeetings = intervals => {
         if (starts[i + 1] < ends[i]) return false;
     }
 
+    // Return true
     return true;
 };
 

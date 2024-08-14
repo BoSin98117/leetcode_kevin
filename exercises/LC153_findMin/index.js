@@ -14,7 +14,7 @@ Output: 1
 Explanation: The original array was [1,2,3,4,5] rotated 3 times.
 
 Example 2:
-Input: nums = [4,5,6,7,0,1,2]   [8,9,3,4,5,6,7]
+Input: nums = [4,5,6,7,0,1,2]
 Output: 0
 Explanation: The original array was [0,1,2,4,5,6,7] and it was rotated 4 times.
 
@@ -56,12 +56,14 @@ function findMin(nums) {
         const leftOfMid = nums[mid - 1];
         const rightOfMid = nums[mid + 1];
 
+        // Input: nums = [4,5,6,7,0,1,2]   [8,9,3,4,5,6,7]
         if (midVal > rightOfMid) {
             return rightOfMid;
         } else if (leftOfMid > midVal) {
             return midVal;
         }
 
+        // Input: nums = [4,5,6,7,0,1,2]   [8,9,3,4,5,6,7]
         if (midVal > leftVal) {
             left = mid + 1;
         } else {
