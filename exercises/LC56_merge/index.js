@@ -16,6 +16,7 @@ Constraints:
 intervals[i].length == 2
 0 <= starti <= endi <= 104
 */
+// Merge
 
 
 const merge = intervals => {
