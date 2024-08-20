@@ -2,11 +2,19 @@
 Given an m x n matrix, return all elements of the matrix in spiral order. 
 
 Example 1:
-Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
+Input: matrix = [
+                    [1,2,3]
+                    [4,5,6]
+                    [7,8,9]
+                ]
 Output: [1,2,3,6,9,8,7,4,5]
 
 Example 2:
-Input: matrix = [[1,2,3,4],[5,6,7,8],[9,10,11,12]]
+Input: matrix = [
+                    [1, 2,  3,  4]
+                    [5, 6,  7,  8]
+                    [9, 10, 11, 12]
+                ]
 Output: [1,2,3,4,8,12,11,10,9,5,6,7] 
 
 Constraints:
@@ -31,6 +39,12 @@ function spiralOrder(matrix) {
 
     // Loop over the input matrix
     while (top <= bottom && left <= right) {
+        /*
+                    Left      Right
+            Top >   [1,   2,   3]
+                    [4,   5,   6]
+            Bottom >[7,   8,   9]
+        */
         if (dir === 'right') {
             // Right = Left -> Right
             for (let i = left; i <= right; i++) {
@@ -38,6 +52,7 @@ function spiralOrder(matrix) {
             }
             top++   // move the direction Top to Down
             dir = 'down'    // Change direction to Down
+
         } else if (dir === 'down') {
             // Down = Top -> Bottom
             for (let i = top; i <= bottom; i++) {
@@ -45,6 +60,7 @@ function spiralOrder(matrix) {
             }
             right--
             dir = 'left';
+
         } else if (dir === 'left') {
             // Left = Right -> Left
             for (let i = right; i >= left; i--) {
@@ -52,6 +68,7 @@ function spiralOrder(matrix) {
             }
             bottom--
             dir = 'up';
+
         } else if (dir === 'up') {
             // Up = Bottom -> Top
             for (let i = bottom; i >= top; i--) {
