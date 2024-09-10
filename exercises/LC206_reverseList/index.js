@@ -20,9 +20,12 @@ The number of nodes in the list is the range [0, 5000].
 
 
 const reverseList = head => {
+    // Create a PREV variable and set it to NULL
     let prev = null;
+    // Create a CURRENT varialbe and set it to the HEAD
     let current = head;
 
+    // WHILE LOOP stating that while we have a CURRENT or CURRENT !== NULL
     while (current) {
         let temp = current.next;
 
@@ -34,6 +37,8 @@ const reverseList = head => {
         current = temp;
     }
 
+    // At the end of our WHILE LOOP, PREV will be the value of the
+    // last item in the linked list which is now the HEAD.
     return prev;
 };
 
