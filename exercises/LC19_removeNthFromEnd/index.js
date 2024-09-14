@@ -23,6 +23,7 @@ The number of nodes in the list is sz.
 
 
 function removeNthFromEnd(head, n) {
+    // Create a dummyHead in case there is just 1 node in the linked list.
     let dummyHead = { next: head };
 
     // Create a SLOW and FAST pointer
