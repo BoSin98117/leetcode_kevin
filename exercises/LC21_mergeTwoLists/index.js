@@ -36,25 +36,26 @@ function mergeTwoLists(l1, l2) {
             tail.next = l1;
             tail = tail.next;
             l1 = l1.next;
-            console.log("dummyHead.next = " + dummyHead.next);
+            // console.log(dummyHead);
         } else {
             tail.next = l2;
             tail = tail.next;
             l2 = l2.next;
-            console.log("dummyHead.next = " + dummyHead.next);
+            // console.log(dummyHead);
         }
     }
 
     // Tail is equal to whichever list that still has nodes in it
+
     tail.next = l1 || l2;
 
-    console.log("dummyHead.next = " + dummyHead.next);
+    console.log(tail);
     return dummyHead.next;
 }
 
 // module.exports = mergeTwoLists;
 
-mergeTwoLists([1, 2, 4], [1, 3, 4])
+mergeTwoLists([1, 2, 4], [1, 3, 4]);
 
 /*
 Time Complexity: O(n + m) - Where N and M are lengths of Linked Lists
