@@ -21,7 +21,9 @@ Constraints:
 1 <= m, n <= 100
 */
 
-
+[1, 2, 3]
+[4, 5, 6]
+[7, 8, 9]
 
 function uniquePaths(m, n) {
     const dpMatrix = [];
@@ -33,8 +35,8 @@ function uniquePaths(m, n) {
     for (let row = 0; row < n; row++) {
         dpMatrix[row][0] = 1;
     }
-    // Fill out first col of dpMatrix
-    for (let col = 0; col < n; col++) {
+    // Fill out first col of dpMatrix 
+    for (let col = 0; col < m; col++) {
         dpMatrix[0][col] = 1;
     }
 
