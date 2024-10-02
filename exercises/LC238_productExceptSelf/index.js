@@ -27,13 +27,20 @@ const productExceptSelf = nums => {
   // This will be the accumulated value 
   let product = 1;
 
+  // console.log("output[] = " + output + "\n");
+
   // Multiply from the LEFT
   for (let i = 0; i < nums.length; i++) {
+    // console.log("output[i] = " + output[i]);
+    // console.log("product = " + product);
     output[i] = output[i] * product;
+    // console.log("output[i] * product = " + output[i]);
     // Mulitply product by the current number at nums[i]
     // Accumulated value of the LEFT
     product = product * nums[i];
   }
+
+  // console.log("LEFT output[] = " + output + "\n");
 
   // Reset product to 1
   product = 1;
@@ -45,11 +52,13 @@ const productExceptSelf = nums => {
     product = product * nums[j];
   }
 
+  // console.log("RIGHT output[] = " + output);
+
   return output;
 };
 
-module.exports = productExceptSelf;
-
+// module.exports = productExceptSelf;
+productExceptSelf([1, 2, 3, 4]);
 
 /*
 Time Complexity: O(n) - There are for loop but NO NESTED FOR LOOP

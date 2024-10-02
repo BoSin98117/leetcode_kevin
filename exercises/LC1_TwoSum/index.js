@@ -36,11 +36,11 @@ function twoSum(arr, target) {
     for (let i = 0; i < arr.length; i++) {
         const num = arr[i];
         const complement = target - num;
-        // UNDEFINED - we make it undefined bc Javascript see's 0 as a falsy value.  So if we push to res[], the first index is 0, and Javascript will consider it falsy.  Making it undefined will resolve this.
         console.log("\n");
         console.log("i = " + i);
         console.log("num[i] = " + num);
         console.log("complement = " + complement);
+        // UNDEFINED - we make it undefined bc Javascript see's 0 as a falsy value.  So if we push to res[], the first index is 0, and Javascript will consider it falsy.  Making it undefined will resolve this.
         if (numsVisited[complement] !== undefined) {
             res.push(numsVisited[complement]);
             res.push(i);
@@ -54,7 +54,7 @@ function twoSum(arr, target) {
     return res;
 }
 // module.exports = twoSum;
-twoSum([2, 7, 11, 4, 5, 6], 10);
+twoSum([2, 7, 0, 4, 5, 6], 5);
 
 
 /*
