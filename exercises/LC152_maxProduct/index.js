@@ -40,12 +40,19 @@ function maxProduct(nums) {
             num * minTillIndex[i - 1]);
 
         max = Math.max(max, maxTillIndex[i]);
+
+        console.log("num = " + num);
+        console.log("maxTillIndex = " + maxTillIndex);
+        console.log("minTillIndex = " + minTillIndex);
+        console.log("max = " + max + "\n");
     }
     return max;
 }
 
-module.exports = maxProduct;
-////
+maxProduct([2, 3, -2, 4]);
+
+// module.exports = maxProduct;
+//
 /*
 Time Complexity: O(n) - 1 For Loop
 Space Complexity: O(n) - We created 2 DP Arrays (each with the same length as Input Array)

@@ -55,7 +55,7 @@ function findMinIdx(rotatedSortedArr) {
         }
     }
 }
-
+//
 
 // Helper function for Binary Search
 // This helper function only takes in a SORTED ARRAY
