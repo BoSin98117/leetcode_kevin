@@ -54,7 +54,7 @@ const isValid = s => {
 
 // module.exports = isValid;
 
-console.log(isValid("({[]})"))
+console.log(isValid("([{}[]])"))
 
 /*
 Time Complexity: O(n) - We iterate through the input string just once
