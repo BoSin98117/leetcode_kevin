@@ -8,7 +8,7 @@ function longestPalindrome(s) {
     let startIndex = 0; // Start iterating on the first character in the string
     let maxLength = 1;  // Our longest substring has to be at least 1
 
-    // Helper function that has LEFT and RIGHT pointers
+    // Helper function that has LEFT and RIGHT pointers,
     function expandAroundMiddle(left, right) {
         // While there is a left and right pointer && the left === right
         while (left >= 0 && right < s.length && s[left] === s[right]) {
