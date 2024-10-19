@@ -41,7 +41,7 @@ const threeSum = nums => {
 
         // Pointer that is next index of i
         let left = i + 1;
-        // Pointer that is the last index in the input array
+        // Pointer that is the last index in the input array//
         let right = nums.length - 1;
 
         // Prevent duplicates
