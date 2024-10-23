@@ -57,7 +57,7 @@ const threeSum = nums => {
                 left++
                 // This will skip the next index if LEFT pointer has the same value as the previous index.  
                 // This will ensure that we do not push the same values into our RES ARRAY more than once.
-                // *This only works if the ARRAY is SORTED
+                // *This only works if the ARRAY is SORTED.
                 while (nums[left] === nums[left - 1]) {
                     left++
                 }
