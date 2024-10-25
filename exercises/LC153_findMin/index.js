@@ -73,7 +73,6 @@ function findMin(nums) {
 }
 
 module.exports = findMin;
-// Mid value
 
 /*
 Time Complexity: O(log n) - We performed Binary Search
