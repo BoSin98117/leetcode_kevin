@@ -39,6 +39,9 @@ const reverseList = head => {
 
     // At the end of our WHILE LOOP, PREV will be the value of the
     // last item in the linked list which is now the HEAD.
+    // [1 -> 2 -> 3]  PREV -> CURRENT -> TEMP
+    // If we are on '3', while(current) means that it will be on '3'.  
+    // temp = current.next (now temp in at 'null') so we will break out of 'while loop' on the next iteration.
     return prev;
 };
 
