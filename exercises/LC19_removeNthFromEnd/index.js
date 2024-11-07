@@ -30,7 +30,7 @@ function removeNthFromEnd(head, n) {
     let slow = dummyHead;
     let fast = dummyHead;
 
-    // Move Fast N nodes ahead of Slow
+    // Move Fast N nodes ahead of Slow //
     for (let i = 1; i <= n; i++) {
         fast = fast.next;
     }
