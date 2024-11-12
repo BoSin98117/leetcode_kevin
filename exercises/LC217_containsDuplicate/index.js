@@ -29,7 +29,7 @@ const containsDuplicate = nums => {
         // If we find a value already in the Hash Table, then return true
         if (visitedNums[num]) {
             return true;
-            // If the value is not in the Hash Table, place it in the Hash Table and set it to True
+            // If the value is not in the Hash Table, place it in the Hash Table and set it to True //
         } else {
             visitedNums[num] = true;
         }
