@@ -19,49 +19,68 @@ Constraints:
 The product of any prefix or suffix of nums is guaranteed to fit in a 32-bit integer.
 */
 
-// 
-const productExceptSelf = nums => {
-  // Output Array will be all 1's
-  let output = nums.map(n => 1);
-  // Set product to 1 initially
-  // This will be the accumulated value 
-  let product = 1;
+// // 
+// const productExceptSelf = nums => {
+//   // Output Array will be all 1's
+//   let output = nums.map(n => 1);
+//   // Set product to 1 initially
+//   // This will be the accumulated value 
+//   let product = 1;
 
-  // console.log("output[] = " + output + "\n");
+//   // console.log("output[] = " + output + "\n");
 
-  // Multiply from the LEFT
-  for (let i = 0; i < nums.length; i++) {
-    // console.log("output[i] = " + output[i]);
-    // console.log("product = " + product);
-    output[i] = output[i] * product;
-    // console.log("output[i] * product = " + output[i]);
-    // Mulitply product by the current number at nums[i]
-    // Accumulated value of the LEFT
-    product = product * nums[i];
-  }
+//   // Multiply from the LEFT
+//   for (let i = 0; i < nums.length; i++) {
+//     // console.log("output[i] = " + output[i]);
+//     // console.log("product = " + product);
+//     output[i] = output[i] * product;
+//     // console.log("output[i] * product = " + output[i]);
+//     // Mulitply product by the current number at nums[i]
+//     // Accumulated value of the LEFT
+//     product = product * nums[i];
+//   }
 
-  // console.log("LEFT output[] = " + output + "\n");
+//   // console.log("LEFT output[] = " + output + "\n");
 
-  // Reset product to 1
-  product = 1;
+//   // Reset product to 1
+//   product = 1;
 
-  // Multiply from the RIGHT
-  for (let j = nums.length - 1; j >= 0; j--) {
-    output[j] = output[j] * product;
-    // Accumulated value of the RIGHT
-    product = product * nums[j];
-  }
+//   // Multiply from the RIGHT
+//   for (let j = nums.length - 1; j >= 0; j--) {
+//     output[j] = output[j] * product;
+//     // Accumulated value of the RIGHT
+//     product = product * nums[j];
+//   }
 
-  // console.log("RIGHT output[] = " + output);
+//   // console.log("RIGHT output[] = " + output);
 
-  return output;
-};
+//   return output;
+// };
 
-// module.exports = productExceptSelf;
-productExceptSelf([1, 2, 3, 4]);
+// // module.exports = productExceptSelf;
+// productExceptSelf([1, 2, 3, 4]);
 
 /*
 Time Complexity: O(n) - There are for loop but NO NESTED FOR LOOP
 Space Complexity: O(1) - The OUTPUT ARRAY does not count as extra space for the purpose of space complexity analysis.
 */
 
+
+
+var productExceptSelf = function (nums) {
+  let output = []
+  let product = 1;
+
+  for (let i = 0; i < nums.length; i++) {
+    output[i] = product
+    product = nums[i] * product
+  }
+
+  product = 1
+  for (let j = nums.length - 1; j >= 0; j--) {
+    output[j] = product * output[j]
+    product = nums[j] * product
+  }
+
+  return output
+};
