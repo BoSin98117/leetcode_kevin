@@ -3,6 +3,7 @@
 // longestPalindrome("cbbd") --> "bb"
 // longestPalindrome("abba") --> "abba"
 // longestPalindrome("a") --> "a"
+//
 
 function longestPalindrome(s) {
     let startIndex = 0; // Start iterating on the first character in the string
