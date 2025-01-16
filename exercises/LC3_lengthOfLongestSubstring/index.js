@@ -31,7 +31,7 @@ function lengthOfLongestSubstring(s) {
 }
 
 module.exports = lengthOfLongestSubstring;
-////
+////sliding window
 /*
 Sliding Window Approach
 
