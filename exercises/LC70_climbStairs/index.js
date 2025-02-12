@@ -43,7 +43,7 @@ const climbStairs = n => {
     return ways[n]; // Can also write - return ways.pop()
 };
 
-// module.exports = climbStairs;
+// module.exports = climbStairs;//
 
 console.log(climbStairs(6));
 
