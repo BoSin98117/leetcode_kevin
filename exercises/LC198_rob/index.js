@@ -20,7 +20,6 @@ Constraints:
 0 <= nums[i] <= 400
 */
 
-
 function rob(nums) {
     if (nums.length === 0) return 0;
     if (nums.length === 1) return nums[0];
