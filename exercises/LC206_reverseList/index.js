@@ -46,7 +46,7 @@ const reverseList = head => {
 };
 
 module.exports = reverseList;
-//////////
+////////////
 
 /*
 Time Complexity: O(n) - We traverse through the Linked List just once.
