@@ -27,8 +27,8 @@ Time Complexity: O(n) - 1 for loop
 Space Complexity: O(1)
 */
 function maxSubArray(nums) {
-    // Create a MAX variable that will be returned at the end of the code.
-    let max = nums[0];
+    // Create a MAX variable that
+
     // let numArray = [nums[0]];
 
     // Loop over the input array
@@ -64,4 +64,4 @@ Iterations
     nums[i] = -3
 */
 
-
+//
